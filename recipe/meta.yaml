@@ -7,7 +7,7 @@ package:
 source:
   fn: {{ version }}.tar.gz
   url: https://github.com/ClinicalGraphics/pyopcode/archive/{{ version }}.tar.gz
-  md5: 30e038bb431c2ae537072e87e893fb9f
+  md5: 2aea781fec665c83fe292177b2cfcd2c
   
 build:
   features:
