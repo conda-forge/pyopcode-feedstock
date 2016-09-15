@@ -29,6 +29,7 @@ REM We have to CD twice, because we're still inside build
 cd..
 cd..
 
+REM Install the package
 python setup.py bdist
 python setup.py install
 exit 0
