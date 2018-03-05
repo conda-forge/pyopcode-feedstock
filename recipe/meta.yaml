@@ -1,4 +1,4 @@
-{% set version = "0.3.3" %}
+{% set version = "0.3.4" %}
 
 package:
   name: pyopcode
@@ -7,14 +7,14 @@ package:
 source:
   fn: {{ version }}.tar.gz
   url: https://github.com/ClinicalGraphics/pyopcode/archive/{{ version }}.tar.gz
-  md5: 2aea781fec665c83fe292177b2cfcd2c
+  md5: 5a147d1dfee1d8fac0cd0dbdc2cfda79
   
 build:
   features:
   - vc9  # [win and py27]
   - vc10  # [win and py34]
   - vc14  # [win and py35]
-  number: 2
+  number: 0
   skip: true  # [osx or win32 or linux32]
 
 requirements:
