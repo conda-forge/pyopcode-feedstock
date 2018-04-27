@@ -1,4 +1,4 @@
-{% set version = "0.3.3" %}
+{% set version = "0.3.5" %}
 
 package:
   name: pyopcode
@@ -7,37 +7,32 @@ package:
 source:
   fn: {{ version }}.tar.gz
   url: https://github.com/ClinicalGraphics/pyopcode/archive/{{ version }}.tar.gz
-  md5: 2aea781fec665c83fe292177b2cfcd2c
+  md5: 63bd05932cebedab2a6103b6dd395152
   
 build:
   features:
   - vc9  # [win and py27]
   - vc10  # [win and py34]
   - vc14  # [win and py35]
-  number: 2
+  number: 0
+  script: python setup.py build_ext -if && python setup.py install --single-version-externally-managed --record=record.txt
   skip: true  # [osx or win32 or linux32]
 
 requirements:
   build:
   - python
-  - numpy x.x
-  - cmake
-  - boost 1.63.*
+  - numpy 1.11.*
+  - boost 1.67.*
   - setuptools
-  - pyyaml
   run:
   - python
-  - numpy x.x
-  - boost 1.63.*
+  - numpy >=1.11
+  - boost 1.67.*
 
 test:
-  commands:
-    - py.test --pyargs pyopcode
   imports:
     - pyopcode
-  requires:
-    - pytest
-  
+
 about:
   home: https://github.com/ClinicalGraphics/pyopcode
   license: LGPL-3.0
