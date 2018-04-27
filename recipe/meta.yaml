@@ -21,12 +21,12 @@ build:
 requirements:
   build:
   - python
-  - numpy x.x
+  - numpy 1.11.*
   - boost 1.67.*
   - setuptools
   run:
   - python
-  - numpy x.x
+  - numpy >=1.11
   - boost 1.67.*
 
 test:
