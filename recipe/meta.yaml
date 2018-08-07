@@ -8,27 +8,26 @@ source:
   fn: {{ version }}.tar.gz
   url: https://github.com/ClinicalGraphics/pyopcode/archive/{{ version }}.tar.gz
   md5: 2aea781fec665c83fe292177b2cfcd2c
-  
+
 build:
-  features:
-  - vc9  # [win and py27]
-  - vc10  # [win and py34]
-  - vc14  # [win and py35]
-  number: 2
+  number: 3
   skip: true  # [osx or win32 or linux32]
 
 requirements:
   build:
-  - python
-  - numpy x.x
   - cmake
-  - boost 1.63.*
+  - {{ compiler('c') }}
+  - {{ compiler('cxx') }}
+  host:
+  - python
+  - numpy
+  - boost
   - setuptools
   - pyyaml
   run:
   - python
-  - numpy x.x
-  - boost 1.63.*
+  - {{ pin_compatible('numpy') }}
+  - boost
 
 test:
   commands:
@@ -37,12 +36,12 @@ test:
     - pyopcode
   requires:
     - pytest
-  
+
 about:
   home: https://github.com/ClinicalGraphics/pyopcode
   license: LGPL-3.0
   summary: OPCODE collision detection wrapped library with numpy bindings (mesh-mesh and mesh-ray)
-  
+
 extra:
   recipe-maintainers:
     - ivoflipse
