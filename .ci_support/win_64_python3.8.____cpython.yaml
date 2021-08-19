@@ -1,5 +1,7 @@
 c_compiler:
 - vs2017
+c_compiler_version:
+- '11'
 channel_sources:
 - conda-forge,defaults
 channel_targets:

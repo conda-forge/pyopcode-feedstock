@@ -3,7 +3,7 @@ About pyopcode
 
 Home: https://github.com/ClinicalGraphics/pyopcode
 
-Package license: LGPL-3.0
+Package license: MIT
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/repo-feedstock/blob/master/LICENSE.txt)
 
