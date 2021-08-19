@@ -1,49 +1,42 @@
-{% set version = "0.3.3" %}
+{% set name = "pyopcode" %}
+{% set version = "0.4.0" %}
 
 package:
-  name: pyopcode
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ version }}.tar.gz
-  url: https://github.com/ClinicalGraphics/pyopcode/archive/{{ version }}.tar.gz
-  md5: 2aea781fec665c83fe292177b2cfcd2c
-  
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 93854cabb60aefbcc14b207a2db926835cc33ee993472b7e838afd86e45a7f02
+  # sha256 is the preferred checksum -- you can get it for a file with:
+  #  `openssl sha256 <file name>`.
+  # You may need the openssl package, available on conda-forge:
+  #  `conda install openssl -c conda-forge``
+
 build:
-  features:
-  - vc9  # [win and py27]
-  - vc10  # [win and py34]
-  - vc14  # [win and py35]
-  number: 2
-  skip: true  # [osx or win32 or linux32]
+  number: 0
+  script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   build:
-  - python
-  - numpy x.x
-  - cmake
-  - boost 1.63.*
-  - setuptools
-  - pyyaml
+    - {{ compiler('c') }}
+  host:
+    - python >=3.6.0
+    - pip
+    - pybind11 >=2.6.0
   run:
-  - python
-  - numpy x.x
-  - boost 1.63.*
+    - python >=3.6.0
+    - numpy >=1.15.0
 
 test:
-  commands:
-    - py.test --pyargs pyopcode
-  imports:
-    - pyopcode
   requires:
     - pytest
-  
+  imports:
+    - pyopcode
+  source_files:
+    - tests
+  commands:
+    - python -m pytest tests
+
 about:
-  home: https://github.com/ClinicalGraphics/pyopcode
-  license: LGPL-3.0
-  summary: OPCODE collision detection wrapped library with numpy bindings (mesh-mesh and mesh-ray)
-  
-extra:
-  recipe-maintainers:
-    - Maxyme
-    - EelcoHoogendoorn
+  summary: python bindings for opcode using pybind11.
