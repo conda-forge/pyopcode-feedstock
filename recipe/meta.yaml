@@ -14,11 +14,11 @@ build:
   - vc9  # [win and py27]
   - vc10  # [win and py34]
   - vc14  # [win and py35]
-  number: 2
+  number: 3
   skip: true  # [osx or win32 or linux32]
 
 requirements:
-  build:
+  host:
   - python
   - numpy x.x
   - cmake
@@ -41,6 +41,7 @@ test:
 about:
   home: https://github.com/ClinicalGraphics/pyopcode
   license: LGPL-3.0
+  license_file: LICENSE.md
   summary: OPCODE collision detection wrapped library with numpy bindings (mesh-mesh and mesh-ray)
   
 extra:
