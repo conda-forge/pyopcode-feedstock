@@ -14,14 +14,16 @@ Summary: OPCODE collision detection wrapped library with numpy bindings (mesh-me
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/pyopcode-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/pyopcode-feedstock)
-OSX: ![](https://cdn.rawgit.com/conda-forge/conda-smithy/90845bba35bec53edac7a16638aa4d77217a3713/conda_smithy/static/disabled.svg)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/pyopcode-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/pyopcode-feedstock/branch/master)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/pyopcode-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/pyopcode-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/pyopcode-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/pyopcode-feedstock/branch/master)
+![OSX disabled](https://img.shields.io/badge/OSX-disabled-lightgrey.svg)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/pyopcode/badges/version.svg)](https://anaconda.org/conda-forge/pyopcode)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/pyopcode/badges/downloads.svg)](https://anaconda.org/conda-forge/pyopcode)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-pyopcode-green.svg)](https://anaconda.org/conda-forge/pyopcode) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pyopcode.svg)](https://anaconda.org/conda-forge/pyopcode) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pyopcode.svg)](https://anaconda.org/conda-forge/pyopcode) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pyopcode.svg)](https://anaconda.org/conda-forge/pyopcode) |
 
 Installing pyopcode
 ===================
@@ -66,6 +68,7 @@ To manage the continuous integration and simplify feedstock maintenance
 Using the ``conda-forge.yml`` within this repository, it is possible to re-render all of
 this feedstock's supporting files (e.g. the CI configuration files) with ``conda smithy rerender``.
 
+For more information please check the [conda-forge documentation](https://conda-forge.org/docs/).
 
 Terminology
 ===========
